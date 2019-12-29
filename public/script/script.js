@@ -11,7 +11,7 @@ form.addEventListener('submit', (e) => {
   weatherInfo3.textContent = '';
 
   if (inputValue.value) {
-    fetch(`http://localhost:3000/weather?address=${inputValue.value}`)
+    fetch(`/weather?address=${inputValue.value}`)
       .then((resp) => resp.json())
       .then((json) => {
         if (json.error) {

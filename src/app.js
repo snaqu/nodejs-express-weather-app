@@ -6,6 +6,7 @@ const getGeocode = require('./utils/getGeocode');
 const getCoordinates = require('./utils/getCoordinates');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -84,6 +85,6 @@ app.get('*', (request, response) => {
   })
 })
 
-app.listen(3000, () => {
-  console.log('Listen on port 3000');
+app.listen(port, () => {
+  console.log(`Listen on port ${port}`);
 })
