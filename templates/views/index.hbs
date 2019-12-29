@@ -13,6 +13,23 @@
   <p>
     Page created by {{name}}
   </p>
+  <form id="form">
+    <input 
+      type="text"
+      name="location"
+      placeholder="Location"
+      id="input"
+      required="required"
+    >
+    <button type="submit">
+      Send
+    </button>
+  </form>
+  <div class="info-wrapper">
+    <div id="weatherInfo"></div>
+    <div id="weatherInfo2"></div>
+    <div id="weatherInfo3"></div>
+  </div>
   {{>footer}}
   <script src="/script/script.js"></script>
 </body>

@@ -13,6 +13,27 @@ body {
 	flex-grow: 1;
 }
 
+.info-wrapper {
+	padding: 16px 0;
+}
+
+input {
+	width: 240px;
+	height: 32px;
+	padding-left: 8px;
+	border: 1px solid black;
+}
+
+button {
+	height: 36px;
+	width: 56px;
+	margin-left: 16px;
+	border: none;
+	color: white;
+	cursor: pointer;
+	background-color: cadetblue;
+}
+
 footer {
 	color: #888888;
 	border-top: 1px solid #eeeeee;
