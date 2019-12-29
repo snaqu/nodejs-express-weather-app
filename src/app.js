@@ -2,6 +2,9 @@ const hbs = require('hbs');
 const path = require('path');
 const express = require('express');
 
+const getGeocode = require('./utils/getGeocode');
+const getCoordinates = require('./utils/getCoordinates');
+
 const app = express();
 
 // define paths for express config
@@ -40,10 +43,29 @@ app.get('/help', (request, response) => {
 })
 
 app.get('/weather', (request, response) => {
-  response.send({
-    name: 'test',
-    age: 23,
-  });
+  if (!request.query.address) {
+    return response.send({
+      error: 'You have to provide address value',
+    })
+  }
+
+getGeocode(request.query.address, (error, { lat, lng, location } = {}) => {
+    if (error) {
+      return response.send({ error })
+    }
+
+    getCoordinates(lat, lng, (error, { summary, pressure }) => {
+      if (error) {
+        return response.send({ error })
+      }
+
+      response.send({
+        forecast: summary,
+        location,
+        pressure,
+      });
+    })
+  })
 })
 
 app.get('/help/*', (request, response) => {

@@ -1,26 +1,45 @@
-*,
-*:before,
-*:after {
-	box-sizing: inherit;
+body {
+	color: #333333;
+	font-family: arial;
+	max-width: 650px;
+	margin: 0 auto;
+	padding: 0 16px;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
-body {
-	padding: 0;
-	margin: 0;
+.main-content {
+	flex-grow: 1;
+}
+
+footer {
+	color: #888888;
+	border-top: 1px solid #eeeeee;
+	margin-top: 16px;
+	padding: 16px 0;
+}
+
+header {
+	margin-top: 16px;
+	margin-bottom: 48px;
 }
 
 h1 {
-	color: blue;
+	font-size: 64px;
+	margin-bottom: 16px;
+}
+
+header a {
+	color: #888888;
+	margin-right: 16px;
+	text-decoration: none;
+}
+
+.portrait {
+	width: 250px;
 }
 
 img {
 	width: 500px;
-}
-
-.footer {
-	position: absolute;
-	bottom: 0;
-	height: 50px;
-	background-color: brown;
-	width: 100%;
 }
